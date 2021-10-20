@@ -38,5 +38,5 @@ jobs:
         run: |
           git clone https://github.com/apache/apisix-dashboard.git
           pushd apisix-dashboard || exit
-          docker buildx build --platform linux/amd64,linux/arm64 --output "type=image,push=true" --file ./Dockerfile . --build-arg ENABLE_PROXY=true --build-arg APISIX_DASHBOARD_VERSION=release/2.9.0 --tag dyrnq/apisix-dashboard:2.9.0
+          docker buildx build --platform linux/amd64 --output "type=image,push=true" --file ./Dockerfile . --build-arg ENABLE_PROXY=false --build-arg APISIX_DASHBOARD_VERSION=v2.9.0 --tag dyrnq/apisix-dashboard:2.9.0
           popd > /dev/null || exit
